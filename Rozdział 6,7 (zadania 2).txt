@@ -1,0 +1,252 @@
+ROZDZIAL 6
+ZADANIE 1
+
+# include  <stdio.h>
+# include  <stdlib.h>
+
+int  main () {
+
+  char tab[26];
+  int i=0;
+  char a='a';
+  while(a<='z'){
+    tab[i]=a;
+    i++;
+    a++;
+  }
+  for(int i=0; i<26; i++){
+    printf("%c ", tab[i]);
+  }
+   return  0 ;
+}
+
+ZADANIE 2
+
+# include  <stdio.h>
+# include  <stdlib.h>
+
+int  main () {
+
+    for(int i=0; i<5; i++) {
+        for (int j=0; j<=i; j++) {
+            printf ("$");
+        }
+        printf ("\n");
+    }
+    return  0 ;
+}
+
+ZADANIE 3
+
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main ()
+{
+
+    for(int i='F'; i>='A'; i--)
+    {
+        for(int j='F'; j>=i; j--)
+        {
+            printf("%c", j);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+
+ZADANIE 5
+
+# include  <stdio.h>
+# include  <stdlib.h>
+
+int  main () {
+
+    int a;
+    int b;
+    printf("Podaj dwie liczby : ");
+    scanf("%d %d", &a, &b);
+    for (int i=a; i<=b; i++){
+        printf("%d|%d|%d|\n", i, i*i, i*i*i);
+    }
+
+    return  0 ;
+}
+
+
+ROZDZIAL 7
+ZADANIE 1
+
+# include  <stdio.h>
+# include  <stdlib.h>
+int  main () {
+
+    char z;
+    char ctab [400];
+    int tab[400] = { 0 };
+    int i=1;
+    while ((z = getchar ())! = ' # ' ) {
+        int j;
+        for (j = 0 ; j <i; j ++) {
+            if (ctab [j] == z) {
+                tab [j] ++;
+                break ;
+            }
+        }
+        if (j == i) {
+            ctab [i - 1 ] = z;
+            tab [i - 1 ] ++;
+            i ++;
+        }
+    }
+    for (int x=0; x<i-1; x++) {
+        if (ctab [x] == '\n' ) printf ( " Znak: ' \\ n', liczba wystapien: % d \ n " , tab [x]);
+        else 
+  printf ( " Znak: ' % c ', liczba wystapien: % d \ n " , ctab [x], tab [x]);
+    }
+    return  0 ;
+}
+
+
+ZADANIE 2
+
+
+# include  <stdio.h>
+# include  <stdlib.h>
+int  main () {
+    char z;
+    char ctab [ 400 ];
+    int i = 0 ;
+    while ((z = getchar ())! = ' # ' ) {
+        if (z== ' \ n ' ) {ctab [i] = ' \\ n ' ;}
+        else {ctab [i] = z;}
+
+        i ++;
+    }
+    for (int x=1; x<=i; x++) {
+        printf ( " '%c' - % d , " , ctab [x - 1 ], (int) ctab [x - 1 ]);
+        if (x% 8 == 0 ) printf ( "\n" );
+    }
+    return  0 ;
+}
+
+
+ZADANIE 3
+
+
+# include <stdio.h>
+# include <stdlib.h>
+int  main () {
+
+    int liczba;
+    int parzyste=0; 
+    int nieparzyste=0; 
+    int liczbaParzystych=0; 
+    int liczbaNieParzystych=0;
+
+    while ( scanf ( "  % d " , & liczba)! = 0 ) {
+        if (liczba == 0 ) break ;
+        if (liczba% 2 == 0 ) {
+            parzyste+= liczba;
+            liczbaParzystych++;
+        }
+        else {
+            nieparzyste+= liczba;
+            liczbaNieParzystych++;
+        }
+    }
+    float sredniaParzystych = parzyste/liczbaParzystych;
+    float sredniaNieParzystych = nieparzyste/liczbaNieParzystych;
+
+    printf ( " Parzyste: % d , srednia: % g \ n " , liczbaParzystych, sredniaParzystych);
+    printf ( " Nieparzyste: % d , srednia: % g " , liczbaNieParzystych, sredniaNieParzystych);
+    return  0 ;
+}
+
+ZADANIE 4
+
+  
+# include  <stdio.h>
+# include  <stdlib.h>
+int  main () {
+
+    char z;
+    int zamiana=0;
+    while ((z=getchar ())!='#') {
+        if (z=='.') {
+                zamiana++;
+        }
+        else  if (z=='!') {
+            zamiana++;
+        }
+    }
+    printf ( " Liczba zamian: % d \ n " , zamiana);
+
+    return  0 ;
+}
+
+
+ZADANIE 5
+
+
+# include  <stdio.h>
+# include  <stdlib.h>
+
+int  main () {
+
+    int liczba,
+    int parzyste=0; 
+    int nieparzyste=0; 
+    int liczbaParzystych=0; 
+    int liczbaNieParzystych=0;
+    while (free) {
+        scanf ("%d", & liczba);
+    if (liczba == 0 ) break;
+        switch (liczba) {
+            case 1:
+                nieparzyste+=liczba;
+                liczbaNieParzystych++;
+                break;
+            case 2:
+                parzyste+=liczba;
+                liczbaParzystych++;
+                break;
+            case 3:
+                nieparzyste+=liczba;
+                liczbaNieParzystych++;
+                break;
+            case 4:
+                parzyste+=liczba;
+                liczbaParzystych++;
+                break;
+            case 5:
+                nieparzyste+=liczba;
+                liczbaNieParzystych++;
+                break;
+            case 6:
+                parzyste+=liczba;
+                liczbaParzystych++;
+                break;
+            case 7:
+                nieparzyste+=liczba;
+                liczbaNieParzystych++;
+                break;
+            case 8:
+                parzyste+=liczba;
+                liczbaParzystych++;
+                break;
+            case 9:
+                nieparzyste+=liczba;
+                liczbaNieParzystych++;
+                break;
+        }
+    }
+    float sredniaParzystych=parzyste/liczbaParzystych;
+    float sredniaNieParzystych = nieparzyste/liczbaNieParzystych;
+    printf ( " Parzyste: % d , srednia: % g \ n " , liczbaParzystych, sredniaParzystych);
+    printf ( " Nieparzyste: % d , srednia: % g " , liczbaNieParzystych, sredniaNieParzystych);
+    return  0 ;
+}
