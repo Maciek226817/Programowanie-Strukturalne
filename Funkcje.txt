@@ -1,0 +1,154 @@
+ZADANIE 2.2.5
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double potegowanie (int n);
+
+int main()
+{
+    int n=0;
+    double x=0;
+    printf("Podaj liczbe calkowita: ");
+    scanf("%d", &n);
+    x=potegowanie(n);
+    printf("%f", x);
+    return 0;
+}
+double potegowanie(int n)
+{
+    float x= pow((double)2,(double)n);
+    return x;
+}
+
+
+
+ZADANIE 2.2.6
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double potegowanie (int n, int m);
+
+int main()
+{
+    int n=0;
+    int m=0;
+    double x=0;
+    printf("Podaj liczbe calkowita n: ");
+    scanf("%d", &n);
+    printf("Podaj liczbe calkowita m: ");
+    scanf("%d", &m);
+    if(n<=0 && m<=0)
+    {
+        printf("Podaj liczby wieksze niz 0");
+    }
+    else
+    {
+        x=potegowanie(n,m);
+        printf("%f", x);
+    }
+    return 0;
+}
+double potegowanie(int n, int m)
+{
+    float x= pow((double)n,(double)m);
+    return x;
+}
+
+
+ZADANIE 2.2.21
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int ciagi (int n);
+
+int main()
+{
+    int n;
+    printf("Podaj nieujemna liczbe: ");
+    scanf("%d", &n);
+
+    while(n<0)
+    {
+        printf("Podano ujemna liczbe!!!\n");
+        printf("Podaj inna liczbe\n");
+        scanf("%d", &n);
+    }
+    printf("element %d ma wartosc %d.", n, ciagi(n));
+    return 0;
+}
+int ciagi(int n)
+{
+    if(n==0)
+        return 1;
+    return 2*ciagi(n-1)+5;
+}
+
+
+ZADANIE 1 (z funkcji)
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+double minimum (double x, double y);
+
+int main()
+{
+    double z=minimum(1111.1111 , 22222.2222);
+    printf("%f", z);
+    return 0;
+}
+double minimum (double x, double y)
+{
+    if (x>y)
+    {
+        return y;
+    }
+    else
+    {
+        return x;
+    }
+}
+
+
+ZADANIE 2 (funkcje)
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+char *rzad_zn( char  ch, int i, int j);
+
+int main()
+{
+    char * tab=rzad_zn('x', 1 , 2);
+    for (int i=0; i<6; i++)
+    {
+        printf("%c", tab[i]);
+    }
+    return 0;
+}
+char * rzad_zn(char ch, int i, int j)
+{
+
+    char tab [6];
+    for(int x =0; x<6; x++);
+    {
+        if( x< i || x> j)
+        {
+            tab[x]='';
+        }
+        else
+        {
+            tab[x]=ch;
+        }
+    }
+    return tab;
+}
