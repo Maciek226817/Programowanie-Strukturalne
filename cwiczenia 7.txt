@@ -1,0 +1,38 @@
+zadanie 3.8
+
+using  namespace  std ;
+void  zamiana ( int & a, int * b)
+{
+    int temp;
+    temp = a;
+    a = * b;
+    * b = temp;
+    cout << " a: " << a << " b: " << * b;
+}
+int  main ()
+{
+    int a, b=10;
+    int & ref_a = a;
+    int * wsk_b = & b;
+    ref_a = 5 ;
+    zamiana (ref_a, * & wsk_b);
+    return  0 ;
+}
+
+
+
+Zadanie 3.1.12
+
+# include <stdio.h>
+# include <stdlib.h>
+void wskaznik ( int n)
+{
+    double* wskaznik_n = & n;
+    printf ( " % p " , ( void *) wskaznik_n);
+}
+int  main ()
+{
+    int n = 10 ;
+    wskaznik(n);
+    return  0 ;
+}
