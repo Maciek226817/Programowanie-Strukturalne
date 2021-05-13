@@ -1,0 +1,61 @@
+ZADANIE 6.2.5
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int *** tablice ( int a, int b, int wsk)
+{
+    int *** tab = malloc (a* sizeof ( int **));
+    int x, y;
+    for(x = 0 ; x <a; x ++)
+    {
+        for (y = 0 ; x <b; y ++)
+            tab [y] = malloc (wsk * sizeof ( int ));
+    }
+    return tab;
+}
+void  usuwany ( int a, int b, int wsk, int *** tab)
+{
+    int x, y;
+    for (x = 0 ; x <a; x ++)
+    {
+        for (y = 0 ; x <b; x ++)
+            darmowe (tab [x]);
+        darmowe (karta);
+    }
+}
+
+
+ZADANOIE 6.2.6
+
+#include <stdio.h>
+#include <stdlib.h>
+
+
+int ** alokowanie ( int a, int b, int wsk)) []
+{
+    return  malloc (a * b * sizeof ( int [wsk]));
+}
+
+void  usuwany ( int a, int b, int tab [] [a] [b])
+{
+    darmowe (karta);
+}
+
+6.2.11
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int  sumowanie ( int tab [] [ 100 ], int a)
+{
+int i, j, suma = 0 ;
+for (i = 0 ; i <a; i ++)
+{
+    for(j = 0 ; j < 100 ; j ++)
+    {
+        suma + = tab [i] [j];
+    }
+}
+return suma;
+}
