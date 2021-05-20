@@ -1,0 +1,58 @@
+# include  < stdio.h >
+# include  < stdlib.h >
+
+int ** foo ( int n, int m, int ** tab1)
+{
+    int ** tab2 = malloc (m * sizeof ( int *));
+    dla ( int i = 0 ; i <m; i ++)
+    {
+        * (tab2 + i) = malloc (n * sizeof ( int ));
+    }
+    dla ( int i = 0 ; i <n; i ++)
+    {
+        dla ( int j = 0 ; j <m; j ++)
+        {
+            tab2 [j] [i] = tab1 [i] [j];
+        }
+    }
+    return tab2;
+}
+
+nieważne  wyswietl ( int n, int m, int ** tab)
+{
+    dla ( int i = 0 ; i <n; i ++)
+    {
+        dla ( int j = 0 ; j <m; j ++)
+        {
+            printf ( " % d  " , * (* (tab + i) + j));
+        }
+        printf ( " * \ n " );
+    }
+    printf ( " --- \ n " );
+}
+
+int ** alokuj ( int n, int m)
+{
+    int ** tab = malloc (n * sizeof ( int *));
+    dla ( int i = 0 ; i <n; i ++)
+    {
+        * (tab + i) = malloc (m * sizeof ( int ));
+    }
+    powrót tab;
+}
+
+int  main ()
+{
+    int ** tablica2 = alokuj ( 4 , 10 );
+    dla ( int i = 0 ; i < 4 ; i ++)
+    {
+        dla ( int j = 0 ; j < 10 ; j ++)
+        {
+            * (* (tablica2 + i) + j) = i + j;
+        }
+    }
+    wyswietl ( 4 , 10 , tablica2);
+    int ** tablicaNew = foo ( 4 , 10 , tablica2);
+    wyswietl ( 10 , 4 , tablicaNew);
+    return  0 ;
+}
